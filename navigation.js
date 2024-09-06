@@ -16,9 +16,10 @@ export default function Navigation() {
             <Stack.Navigator screenOptions={{ headerShown: false }}>
                 <Stack.Screen name='Home' component={HomeScreen} />
                 <Stack.Screen name='Restaurant' component={Restaurant} />
-                <Stack.Screen name='Cart' component={CartScreen} options={{ presentation: 'transparentModal' }} />
-                <Stack.Screen name='OrderPreparing' component={OrderPreparingScreen} options={{ presentation: 'fullScreenModal' }} />
-                <Stack.Screen name='Delivery' component={DeliveryScreen} options={{ presentation: 'fullScreenModal' }} />
+                <Stack.Screen name='Cart' component={CartScreen} options={{ presentation: 'transparentModal', animation: 'slide_from_bottom' }} />
+                <Stack.Screen name='OrderPreparing' component={OrderPreparingScreen} options={
+                    { presentation: 'transparentModal', animation: 'slide_from_bottom', gestureEnabled: true, cardStyle: '{ backgroundColor: "transparent' }} />
+                <Stack.Screen name='Delivery' component={DeliveryScreen} options={{ presentation: 'transparentModal', animation: 'slide_from_bottom', gestureEnabled: true }} />
             </Stack.Navigator>
         </NavigationContainer>
     )
