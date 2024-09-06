@@ -5,9 +5,11 @@ import { featured } from '../constants'
 import MapView, { Marker } from 'react-native-maps'
 import { themeColors } from '../theme'
 import Icon from 'react-native-vector-icons/Feather'
+import { useSelector } from 'react-redux'
+import { selectRestaurant } from '../slices/restaurantSlice'
 
 const DeliveryScreen = () => {
-    const restaurant = featured.restaurants[0];
+    const restaurant = useSelector(selectRestaurant);
     const navigation = useNavigation();
     return (
         <View className="flex-1">

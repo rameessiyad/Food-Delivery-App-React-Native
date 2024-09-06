@@ -4,9 +4,11 @@ import { featured } from '../constants'
 import { themeColors } from '../theme';
 import Icon from 'react-native-vector-icons/Feather'
 import { useNavigation } from '@react-navigation/native';
+import { useSelector } from 'react-redux';
+import { selectRestaurant } from '../slices/restaurantSlice';
 
 const CartScreen = () => {
-    const restaurant = featured.restaurants[0];
+    const restaurant = useSelector(selectRestaurant)
     const navigation = useNavigation();
     return (
         <View className="bg-white flex-1 mt-2">
